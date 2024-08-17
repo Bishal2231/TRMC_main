@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Notice Board</title>
+    <link rel="stylesheet" href="/css/noticeM.css" >
+    <link rel="stylesheet" href="/css/navbarM.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Poppins:wght@100;200;300;400;600;700&family=Roboto:wght@100;300;400;500;700;900&family=Sacramento&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/Logos/fav.png" type="image/x-icon">
+    <script src="/js/scriptM.js" defer></script>
+   
+</head> 
+<body>
+    <section class="header">
+        <%-include('includes/navbar.ejs')%>
+    </section>
+    <div class="addsection">
+        <div class="add">
+            <%if(user){%>
+            <% if(user.isAdmin) { %>
+                <a href="/text/<%= user._id %>" id="addpost" class="addpost-btn">ADD POST</a>
+            <% } %>
+            <% } %>
+               
+        </div>
+    </div>
+    <main>
+        <section class="posts-section">
+            <% for(post of posts) { %>
+                <div class="profile-content">
+                    <div class="post <%= post.isMostRecent ? 'highlighted-post' : '' %>">
+                        <div class="post-header">
+                      <a href="/profile/<%= post.owner._id %>"> <img src="<%= post.owner.avatar %>" alt="Profile Photo" class="post-profile-photo"></a>     
+                            <div class="post-details">
+                                <a href="/profile/<%= post.owner._id %>">   <h3><%= post.owner.name %></h3></a>
+                                <p><%= new Date(post.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %> 
+                                <%= new Date(post.createdAt).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) %></p>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p><%= post.title %></p>
+                            <img src="<%= post.photo %>" alt="Post Image" class="post-image">
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-button"><i class="far fa-thumbs-up"></i> Like: <%= post.likes %></button>
+                            <button class="action-button"><i class="far fa-comment"></i> Comment</button>
+                            <button class="action-button"><i class="fa-solid fa-link"></i></button>
+                            <button class="action-button"><i class="fas fa-share"></i> Share</button>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </section>
+    </main>
+
+    <div class="section">
+        <%-include ('includes/footer.ejs')%>
+    </div>
+</body>
+</html>

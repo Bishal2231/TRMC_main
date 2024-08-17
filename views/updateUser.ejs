@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update info</title>
+    <link rel="stylesheet" href="/css/updateUser.css">
+    <link rel="shortcut icon" href="/Logos/fav.png" type="image/x-icon">
+
+</head>
+<body>
+    <form action="/user/update/<%= user._id %>" method="POST" enctype="multipart/form-data">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" value="<%= user.name %>" required>
+        </div>
+      
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" value="<%= user.email %>" required>
+        </div>
+      
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+      
+        <div>
+          <label for="avatar">Avatar:</label>
+          <input type="file" id="avatar" name="avatar">
+        </div>
+      
+        <div>
+          <label for="coverImage">Cover Image:</label>
+          <input type="file" id="coverImage" name="coverImage">
+        </div>
+      
+        <div>
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" value="<%= user.address %>">
+        </div>
+      
+        <div>
+          <label for="profession">Profession:</label>
+          <input type="text" id="profession" name="profession" value="<%= user.profession %>">
+        </div>
+      
+        <div>
+          <label for="DOB">Date of Birth:</label>
+          <input type="date" id="DOB" name="DOB" value="<%= user.DOB %>">
+        </div>
+      
+        <div>
+          <label for="bio">Bio:</label>
+          <textarea id="bio" name="bio"><%= user.bio %></textarea>
+        </div>
+      
+        <button type="submit">Update</button>
+      </form>
+      
+</body>
+</html>
+
+
+
+

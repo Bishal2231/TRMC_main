@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>posts</title>
+    <link rel="stylesheet" href="/css/profilepostM.css">
+    <link rel="stylesheet" href="/css/navbarM.css">
+    <link rel="shortcut icon" href="/Logos/fav.png" type="image/x-icon">
+
+</head>
+<body>
+    <section class="header">
+        <%-include('includes/navbar.ejs')%>
+    </section>
+    <div class="post-container"> 
+        
+        <% for(post of posts){%>
+
+        <div class="fb-post">
+            <div class="fb-post-header">
+                <img src="<%=post.owner.avatar%>" alt="Profile Picture" class="fb-profile-pic">
+                <div class="fb-post-info">
+                    <span class="fb-user-name"><%=post.owner.name%></span>
+                    <span class="fb-post-time"><%=post.createdAt%></span>
+                </div>
+            </div>
+            <div class="fb-post-content">
+                <p><%=post.title%></p>
+                <img src="<%=post.photo%>" alt="Post Image" class="fb-post-image">
+            </div>
+            <div class="fb-post-footer">
+                <button class="fb-post-button"><i class="fa fa-thumbs-up"></i> Like</button>
+                <button class="fb-post-button"><i class="fa fa-comment"></i> Comment</button>
+                <button class="fb-post-button"><i class="fa fa-share"></i> Share</button>
+            </div>
+        </div>
+      <%  }%></div>
+  
+</body>
+</html>

@@ -1,0 +1,257 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Styling */
+.header {
+    min-height: 10vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(/images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+    position: relative;
+    
+  }
+
+  #message{
+    font-size:1.6rem;
+  }
+.btn-hero {
+    background-color: #ffdd57;
+    color: #0044cc;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #ffcc33;
+}
+
+/* Hero Section Styling */
+.contact-hero {
+    background: url('/images/cafeteria.jpg') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    margin-top: 80px; /* Adjusted for fixed header */
+}
+
+.contact-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 68, 204, 0.7);
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-in-out;
+}
+.logoutuser{
+    font-size:1rem;
+    padding:10px;
+    border:2px solid  red;
+    background-color: crimson;
+    color:white;
+    border-radius: 10px;
+
+}
+#checkbutton{
+    padding:10px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#section-checkform{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin:30px;
+
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contact-hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Main Styling */
+main {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-section, .contact-details-section {
+    margin-bottom: 20px;
+}
+
+.contact-form-section h3, .contact-details-section h3 {
+    color: #0044cc;
+    margin-bottom: 10px;
+}
+
+.contact-form-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-section form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form-section form input, .contact-form-section form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    background-color: #0044cc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #003399;
+}
+
+.contact-details-section p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contact-details-section p i {
+    margin-right: 10px;
+    color: #ffdd57;
+}
+
+/* Map Section */
+.contact-map {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.contact-map h3 {
+    color: #0044cc;
+    margin-bottom: 10px;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+
+
+}
+
+#campus-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    border: 0;
+
+}
+
+
+
+main{
+    margin:20px;
+}
+
+/* calender */
+/* .calendar-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; 
+    padding-bottom: 72.5%; 
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+.calendar-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+} */
+
+
+
+/* Footer Styling */
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  
+    
+    .contact-hero-content h2 {
+        font-size: 2em;
+    }
+
+    .contact-hero-content p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    
+    .contact-hero-content h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-hero-content p {
+        font-size: 0.9em;
+    }
+}

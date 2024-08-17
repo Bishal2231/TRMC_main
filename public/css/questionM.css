@@ -1,0 +1,110 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header {
+    min-height: 10vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(/images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.question-maincontainer, .posts-section {
+    max-width: 1200px; /* Increased max-width for larger screens */
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.question-container, .post {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.question-container h1, .post h3 {
+    margin: 0;
+    color: #333;
+}
+
+.question-container h2, .post p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.post-profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.post-details h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.post-details p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.post-content p {
+    margin: 10px 0;
+}
+
+/* Flexbox Layout for Large Screens */
+@media (min-width: 769px) {
+    .posts-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .post {
+        flex: 1 1 calc(33.333% - 20px); /* Adjust percentage for number of posts per row */
+        box-sizing: border-box;
+    }
+}
+
+/* Block Layout for Smaller Screens */
+@media (max-width: 768px) {
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .post-profile-photo {
+        margin-bottom: 10px;
+    }
+
+    .posts-section {
+        display: block;
+    }
+
+    .post {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-content p {
+        font-size: 0.9em;
+    }
+}

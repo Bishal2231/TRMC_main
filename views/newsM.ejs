@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="/css/navbarM.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/newsM.css">
+    <link rel="shortcut icon" href="/Logos/fav.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Poppins:wght@100;200;300;400;600;700&family=Roboto:wght@100;300;400;500;700;900&family=Sacramento&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="/js/scriptM.js" defer></script>
+</head>
+<body>
+    <section class="header" id="navbar">
+        <%-include('includes/navbar.ejs')%>
+    </section>
+    <main>
+     
+        <div class="container">
+            <div class="mains1">
+                <% if(eventPosts) { %>
+                    <% for(eventpost of eventPosts) { %>
+                        <section id="academic-achievements">
+                            <h2><%=eventpost.subtitle%></h2>
+                            <div class="news-container">
+                                <article class="news-item">
+                                    <div class="news-thumbnail">
+                                     <%   if(eventpost.image){%>
+                                      <img src="<%=eventpost.image%>" alt="Anisha Sharma Wins Research Award">
+                                      <%  }%>
+                                        <h3><%=eventpost.title%></h3>
+                                    </div>
+                                    <p><strong>Date:</strong> 
+                                        <%= new Date(eventpost.createdAt).toLocaleDateString('en-US', {
+                                            year: 'numeric',
+                                            month: 'short',
+                                            day: 'numeric'
+                                        }) %>
+                                        <%= new Date(eventpost.createdAt).toLocaleTimeString('en-US', {
+                                            hour: '2-digit',
+                                            minute: '2-digit',
+                                            second: '2-digit'
+                                        }) %>
+                                    </p>
+                                    <p><strong>Description :</strong><%=eventpost.description%></p>
+                                     <p> <strong>posted by:</strong>   <a href="/profile/<%=eventpost.owner._id%>"><%=eventpost.owner ? eventpost.owner.name : null%></a> </p>
+                                    <a href="#">Read More</a>
+                                    <div class="share-buttons">
+                                        <button onclick="share('facebook', 'achievement1')">
+                                            <img src="Logos/fb1.png" alt="Share on Facebook"> Share on Facebook
+                                        </button>
+                                        <button onclick="share('twitter', 'achievement1')">
+                                            <img src="Logos/twitter-x-logo.png" alt="Share on Twitter"> Share on Twitter
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+                    <% } %>
+            </div>
+            <div class="mains2 stickyDiv">
+                <section id="events">
+                    <h2>Latest News</h2>
+                    <div class="news-container">
+                        <article class="news-item">
+                            <div class="news-thumbnail">
+                                <%   if(eventPosts[0].image){%>
+                                    <img src="<%=eventPosts[0].image ? eventPosts[0].image : null %>" alt="Workshop on Artificial Intelligence and Machine Learning">
+                                    <%  }%>
+                                <h3><%=eventPosts ? eventPosts[0].title : null %></h3>
+                            </div>
+                            <p><strong>Date:</strong> 
+                                <%= new Date(eventpost.createdAt).toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: 'short',
+                                    day: 'numeric'
+                                }) %>
+                                <%= new Date(eventpost.createdAt).toLocaleTimeString('en-US', {
+                                    hour: '2-digit',
+                                    minute: '2-digit',
+                                    second: '2-digit'
+                                }) %>
+                            </p>
+                            <p><strong>Description:</strong> <%=eventPosts[0].description%></p>
+                            <p class="newpost"> <strong>posted by:</strong> <a href="/profile/<%=eventpost.owner._id%>"> <%=eventPosts ? eventPosts[0].owner.name : null%></a></p>
+                            <div class="share-buttons">
+                                <button onclick="share('facebook', 'event1')">
+                                    <img src="Logos/fb1.png" alt="Share on Facebook"> Share on Facebook
+                                </button>
+                                <button onclick="share('twitter', 'event1')">
+                                    <img src="Logos/twitter-x-logo.png" alt="Share on Twitter"> Share on Twitter
+                                </button>
+                                <%if(user){%>
+                                    <%if(user.admin){%>
+                             <h1> Add Event</h1>
+                        
+                               <%}%>
+                                    <%}%>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <%-include('includes/footer.ejs')%>
+    <script>
+        window.onscroll = function() {makeDivSticky()};
+        var stickyDiv = document.querySelector(".stickyDiv");
+        var navbar = document.querySelector('#navbar');
+        var stickyOffset = navbar.offsetHeight; 
+        function makeDivSticky() {
+            if (window.pageYOffset >= stickyOffset) {
+                stickyDiv.classList.add("sticky");
+            } else {
+                stickyDiv.classList.remove("sticky");
+            }
+        }
+    </script>
+    <% } %>
+</body>
+</html>

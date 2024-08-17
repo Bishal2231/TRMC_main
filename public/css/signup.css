@@ -1,0 +1,151 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 980px;
+    position: relative;
+}
+
+/* Container styling */
+.container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Header styling */
+h1 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Error message styling */
+.error-message {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Button styling */
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Login link styling */
+.login-link {
+    margin-top: 1rem;
+}
+
+.login-link a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+/* circle loading */
+.loading{
+
+    float:right;
+    position: absolute;
+    padding:30px;
+    height:30vh;
+    border-radius: 10px;
+
+
+}
+#loading{
+    display: block;
+    border-radius: 10px;
+    padding:20px;
+    background-color: #333;
+
+}
+#loading #message{
+    font-size:28px;
+    font-family:sans-serif;
+    color:white;
+    height:10vh;
+    flex-wrap: wrap;
+
+}
+
+
+/* css load */
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 100%;
+    height:10%;
+    aspect-ratio: 1;
+    --c: linear-gradient(#e7dede 0 0);
+    --r1: radial-gradient(farthest-side at bottom,#eee5e5 93%,#f3eaea00);
+    --r2: radial-gradient(farthest-side at top   ,#f3eeee 93%,#0000);
+    background: 
+      var(--c) ,var(--r1),var(--r2),
+      var(--c) ,var(--r1),var(--r2),
+
+      var(--c) ,var(--r1),var(--r2);
+    background-repeat: no-repeat;
+    animation: l1 1s infinite alternate;
+  }
+  @keyframes l1 {
+    0%,10% {
+      background-size: 8px 0,8px 4px,8px 4px;
+      background-position: 0 50%,0 calc(50% - 2px),0 calc(50% + 2px),50% 50%,50% calc(50% - 2px),50% calc(50% + 2px),100% 50%,100% calc(50% - 2px),100% calc(50% + 2px);
+   }
+   90%,100% {
+      background-size: 8px 100%,8px 4px, 8px 4px;
+      background-position: 0 50%,0 -2px,0 calc(100% + 2px),50% 50%,50% -2px,50% calc(100% + 2px),100% 50%,100% -2px,100% calc(100% + 2px);
+   }
+  }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/css/profileM.css">
+    <link rel="stylesheet" href="/css/navbarM.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="/Logos/fav.png" type="image/x-icon">
+
+</head>
+<body>
+      <section class="header">
+    <%-include('includes/navbar.ejs')%>
+</section>
+    <div class="profile-container">
+        <div class="cover-photo">
+            <img src="<%=user.coverImage%>" alt="Cover Photo">
+        </div>
+        <div class="profile-header">
+            <div class="profile-photo">
+                <img src="<%=user.avatar%>" alt="Profile Photo">
+            </div>
+            <div class="profile-details">
+                <div class="space"></div>
+                <h1><%=user.name%></h1>
+       
+                <%if(user.email){%>
+                <p>E-MAIL:<%=user.email%></p>
+                <% }%>
+                <%if(user.address){%>
+                    <p>Address:<%=user.address%></p>
+                    <% }%>
+                <%if(user.profession){%>
+                        <p>Profession:<%=user.profession%></p>
+                        <% }%> 
+                    
+                        <p>Likes:<%=user.likedPost%></p>
+                        <%  if(user.DOB){%>
+                        <p> DOB:<%=user.DOB%></p>
+                        <% }%>
+
+                <P> User joined in :
+                <%= new Date(user.createdAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                }) %> 
+
+             
+            </P>
+            </div>
+        </div>
+        <div class="profile-nav">
+            <button class="nav-button active"><a href="/profile/<%=user._id%>/posts">Notice</a>  </buttfon>
+            <button class="nav-button"><a href="">events</a></button>
+            <button class="nav-button"><a href="">Friends</a></button>
+            <button class="nav-button"><a href="">Photos</a></button>
+            <button class="nav-button"><a href="">More</a></button>
+        </div>
+
+
+      
+        <div class="profile-content">
+            <div class="posts-section">
+                <div class="post">
+                   
+                  
+                </div>
+          
+            </div>
+        </div>
+    </div>
+</body>
+</html>

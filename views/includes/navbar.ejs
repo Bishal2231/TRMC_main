@@ -1,0 +1,119 @@
+
+    <nav>
+
+       
+
+      <a href="/homepage"><img src="Logos/logo.png" alt="Logo" /></a>
+      <div class="nav-links" id="navLinks">
+        <!-- <i class="fa-solid fa-bars"></i>  3line--> 
+        <i class="fa fa-podcast" onclick="hideMenu()"></i>
+        <!-- <i class="fa-solid fa-bars" onclick="hideMenu()"></i> -->
+        
+        <div class="menu-container">
+           
+          <div class="menu-item"><ul><li><a href="/notice">NOTICES</a></li></ul></div>
+          <div class="menu-item"><ul><li><a href="/contact">CONTACT US</a></li></ul></div>
+          <div class="menu-item"><ul><li><a href="/admission">ADMISSIONS</a></li></ul></div>
+          <div class="menu-item"><ul><li><a href="/news">NEWS & EVENTS</a></li></ul></div>
+        
+        </div>
+      </div>
+
+      <div class="nav-icons">
+        <%if(user){%>
+        <div class="profile-dropdown">
+           
+          <div class="profile-btn"><img src="<%=user.avatar%>" alt="User" class="profile-user"/></div>
+          <div class="dropdown-content">
+
+
+          <div>
+            <!-- <form method="get"  action="/profile/<%=user._id%>">
+            <button>  Profile</button>
+        </form> -->
+        <a href="/profile/<%=user._id%>">Profile</a>
+         </div>  
+
+         <div>
+            <!-- <form method="get"  action="/homepage/<%=user._id%>">
+                <button>  Updateinfo</button>
+            </form> -->
+            <a href="/user/update/<%=user.id%>">Update Info</a>
+         </div>
+         
+        <% if(user.isAdmin){%>
+         <div>
+          <!-- <form method="get"  action="/event/post">
+          <button>  Add News</button> -->
+          <a href="/event/post">Add Event</a>
+      <!-- </form> -->
+       </div>  
+
+       <div>
+        <!-- <form method="get"  action=" /text/<%=user._id%>">
+        <button>  Add NOTICE</button> -->
+        <a href="/text/<%=user._id%>">Add Notice</a>
+    <!-- </form> -->
+     </div>  
+
+     <div>
+      <!-- <form method="get"  action=" /text/<%=user._id%>">
+      <button>  Add NOTICE</button> -->
+      <a href="/contacts/<%=user._id%>">Check Question</a>
+  <!-- </form> -->
+   </div> 
+   <%}%>
+         <div>
+            <form method="post"  action="/logout">
+                <button>  Logout</button>
+            </form>
+         </div>
+
+
+         <!-- <div>
+          <form method="get"  action="/text/<%=user._id%>">
+              <button>  Add Notice</button>
+          </form>
+         
+       </div> -->
+
+          </div>
+        </div>
+        <%}%>
+
+        <%if(!user){%>  
+
+            <div class="DIV" ><a href="/login">LOGIN</a> </div>
+           <div class="slash"> /</div> 
+            <div class="DIV">  <a href="/signup">SIGNUP</a></div>
+         
+            <%}%>
+        <!-- <i class="fa-solid fa-bars" onclick="showMenu()"></i> -->
+        <i class=" fa fa-podcast" onclick="showMenu()"></i>
+        <!-- <i class=" fa-solid fa-bars" onclick="showMenu()"></i> -->
+
+      </div>
+    </nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const userpp = document.querySelector(".profile-user");
+  const useropt = document.querySelector(".dropdown-content");
+  
+useropt.style.display="none";
+
+  userpp.addEventListener("click", () => {
+
+   if(useropt.style.display==="block") {
+    useropt.style.display="none"
+    }
+else{
+
+    useropt.style.display="block";
+}
+   
+
+  });
+});
+</script>
+ 

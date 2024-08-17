@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  .header {
+    min-height: 10vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(/images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+    position: relative;
+  
+  }
+  
+  .text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .text-box h1 {
+    font-size: 62px;
+  }
+  
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+  }
+  
+  .hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hero-btn:hover {
+    border: 1px solid #fff;
+    background: #f44336;
+    transition: 1s;
+  }
+  
+  nav .fa-solid {
+    display: none;
+  }
+  
+  /*-----------Responsive-----------*/
+  
+  @media (max-width: 700px) {
+    .text-box h1 {
+      font-size: 20px;
+    }
+  
+    .nav-links ul li {
+      display: block;
+    }
+  
+    .nav-links {
+      position: absolute;
+      background: #fa8f14;
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 2;
+      transition: 1s;
+    }
+  
+    nav .fa-solid {
+      display: block;
+      color: #fff;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  
+
+  }
+  
+  /*---------course---------*/
+   
+  /* -------campus------ */
+  
+ /* Basic Reset */
+
+
+
+/* Hero Section Styling */
+.hero {
+    background: url('/images/cafeteria.jpg') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(111, 114, 119, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn-hero {
+    background-color: #ffdd57;
+    color: #0044cc;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #ffcc33;
+}
+
+/* Main Styling */
+main {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.admissions {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-section, .process-section, .criteria-section {
+    margin-bottom: 20px;
+}
+
+.info-section h3, .process-section h3, .criteria-section h3 {
+    color: #0044cc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.info-section h3 i, .process-section h3 i, .criteria-section h3 i {
+    margin-right: 10px;
+    color: #ffdd57;
+}
+
+.info-section p, .process-section ol, .criteria-section ul {
+    margin-bottom: 10px;
+}
+
+.process-section ol {
+    padding-left: 20px;
+}
+
+.criteria-section ul {
+    padding-left: 20px;
+}
+
+  
+
+
+ 
+
+  /*----------Facilities--------- */
+   
+  
+  /* -----Call To Action---- */
+  
+  .cta {
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(/images/banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+  }
+  
+  .cta h1 {
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+  
+  /*----- footer -----*/
+  
+  

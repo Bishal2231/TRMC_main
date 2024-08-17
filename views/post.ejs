@@ -1,0 +1,73 @@
+
+<!--  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="/css/postM.css">
+    <link rel="stylesheet" href="/css/navbarM.css">
+    <link rel="shortcut icon" href="/Logos/fav.png" type="image/x-icon">
+
+</head>
+<body>
+    <section class="header">
+        <%-include('includes/navbar.ejs')%>
+    </section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="userinfo">
+                <img id="avatar" src="<%=user.avatar%>">
+                <p>Posting as : <%=user.name%></p>
+            </div>
+           <div class="center"><h1>Create Post</h1></div> 
+            <form action="/text/<%=user._id%>" method="POST" enctype="multipart/form-data" id="layout">
+                <div class="form-group">
+                    <label for="title">Title <span class="require">*</span></label>
+                    <textarea class="form-control" name="title" id="title" maxlength="100" placeholder="Event Name"></textarea>
+                    <small id="titleCounter">100 characters remaining</small>
+                </div>
+                <div class="form-group" id="file">
+                    <label for="photo">Upload Photo</label>
+                    <input type="file" name="photo" id="photo" accept="image/*">
+                    <img id="photoPreview" src="#" alt="Image Preview" style="display:none; margin-top:10px; max-height:200px;">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="reset" class="btn btn-default"> <a href="/notice">Cancel</a>  </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const title = document.getElementById('title');
+    const titleCounter = document.getElementById('titleCounter');
+
+    title.addEventListener('input', function() {
+        const remaining = 100 - this.value.length;
+        titleCounter.textContent = `${remaining} characters remaining`;
+    });
+
+    const photoInput = document.getElementById('photo');
+    const photoPreview = document.getElementById('photoPreview');
+
+    photoInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                photoPreview.src = e.target.result;
+                photoPreview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="Logos/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/createEvent.css">
+    <link rel="stylesheet" href="/css/navbarM.css">
+
+   
+</head>
+<body>
+    <section class="header">
+        <%-include('includes/navbar.ejs')%>
+    </section>
+
+<div class="container">
+    <h2>Create Event</h2>
+    <form action="/event/post" method="POST" enctype="multipart/form-data">
+        <!-- Title Field -->
+        <div class="form-group">
+            <label for="title">Event Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter event title" required>
+        </div>
+
+        <!-- Image Field -->
+        <div class="form-group">
+</label>
+            <label for="image">Event Image*</label>
+            <input type="file" class="form-control-file" id="photo" name="image" accept="image/*" >
+            <img id="photoPreview" src="#" alt="Image Preview" style="display:none; margin-top:10px; max-height:200px;">
+
+        </div>
+
+        <!-- Achievement Field -->
+        <div class="form-group">
+            <label for="achievement">Subtitle*</label>
+            <input type="text" class="form-control" id="achievement" name="subtitle" placeholder="sub-title">
+        </div>
+
+        <!-- Description Field -->
+        <div class="form-group">
+            <label for="description">Event Description</label>
+            <textarea class="form-control" id="description" name="description" rows="4" placeholder="Describe the event" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-block">Create Event</button>
+    </form>
+</div>
+
+<!-- Include Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  
+
+    const photoInput = document.getElementById('photo');
+    const photoPreview = document.getElementById('photoPreview');
+
+    photoInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                photoPreview.src = e.target.result;
+                photoPreview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
+</body>
+</html>

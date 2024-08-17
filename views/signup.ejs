@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/css/signup.css"> 
+    <link rel="shortcut icon" href="/Logos/fav.png" type="image/x-icon">
+
+ 
+    <script src="/js/scriptM.js"></script>
+</head>
+<body>
+
+
+    <div class="container">
+        <h1>Signup</h1>
+        <% if (error) { %>
+            <div class="error-message"><%= error %></div>
+        <% } %>
+        <form method="post" enctype="multipart/form-data" action="/signup">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Avatar:</label>
+                <input type="file" class="password" name="avatar" placeholder="Enter your password" required>
+            </div>
+           
+            <div class="form-group">
+                <label for="password">COVERIMAGE:</label>
+                <input type="file" class="password" name="coverImage" placeholder="OPTIONAL" >
+            </div>
+            <div class="form-group">
+                <label for="password">ADDRESS:</label>
+                <input type="text" class="password" name="address" placeholder="address" >
+            </div>
+            <div class="form-group">
+                <label for="password">PROFESSION:</label>
+                <input type="text" class="password" name="profession" placeholder="PROFESSION" >
+            </div>
+            <div class="form-group">
+                <label for="password">DOB:</label>
+                <input type="date" class="password" name="DOB" placeholder="DATE OF BIRTH" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" id="signupButton">Signup</button>
+            <br>
+           
+
+
+        </form>
+        <p class="login-link">Already have an account? <a href="/login">Login here</a></p>
+    </div>
+</body>
+</html>

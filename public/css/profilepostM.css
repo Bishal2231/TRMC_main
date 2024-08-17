@@ -1,0 +1,117 @@
+/* General Styles */
+.post-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between posts */
+    justify-content: center; /* Centers posts within the container */
+}
+.header {
+    min-height: 10vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(/images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+    position: relative;
+  
+  }
+  
+.fb-post {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 10px 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Post Header */
+.fb-post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.fb-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.fb-post-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.fb-user-name {
+    font-weight: bold;
+    color: #385898;
+}
+
+.fb-post-time {
+    font-size: 12px;
+    color: #606770;
+}
+
+/* Post Content */
+.fb-post-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #1c1e21;
+}
+
+.fb-post-image {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+    height: auto; /* Adjusts height based on content */
+}
+
+/* Post Footer */
+.fb-post-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #e9ebee;
+}
+
+.fb-post-button {
+    background: none;
+    border: none;
+    color: #606770;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.fb-post-button i {
+    margin-right: 5px;
+}
+
+.fb-post-button:hover {
+    color: #1877f2;
+}
+
+/* Responsive Design */
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fb-post-footer {
+        flex-direction: row; /* Ensure buttons remain in a row */
+    }
+    
+    .fb-post-button {
+        flex: 1 1 auto; /* Allow buttons to grow/shrink as needed */
+        margin: 5px 0; /* Space between buttons on smaller screens */
+    }
+}
+

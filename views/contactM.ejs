@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/css/navbarM.css">
+    <link rel="stylesheet" href="/css/footer.css">
+   
+    <link rel="stylesheet" href="/css/contactM.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Poppins:wght@100;200;300;400;600;700&family=Roboto:wght@100;300;400;500;700;900&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  <link rel="shortcut icon" href="Logos/fav.png" type="image/x-icon">
+  <script src="/js/scriptM.js" defer></script>
+</head>
+<body>
+    <section class="header">
+        <%-include('includes/navbar.ejs')%>
+    </section>
+    
+    <main>
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <h2>Contact Us</h2>
+                <p>We are here to help you with any queries or information you need about BIT-ThakurRam.</p>
+                <a href="/" class="btn-hero">Back to Home</a>
+       
+        </section>
+    </div>
+
+    <% if(user){%>
+        <% if(user.isAdmin){%>
+        <form action="/contacts/<%=user._id%>" id="section-checkform"   method="get">
+            <button id="checkbutton"> Check Questions</button>
+        </form>
+        <%}%>
+        <%  }%>
+        <section class="contact-info">
+            <div class="contact-form-section">
+       
+
+                <h3>Contact Form</h3>
+                <form method="post" action="/contact/<%=user?user.id:null%>">
+                  
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    
+                  <%-user?  '<button type="submit" class="btn-submit">Send Message</button>':'<p class="logoutuser">LOG IN TO ASK THE QUESTION ONLY LOGGEDIN USER CAN ASK QUESTION</p>'%>
+                </form>
+            </div>
+            <div class="contact-details-section">
+                <h3>Contact Details</h3>
+                <p><i class="fas fa-map-marker-alt"></i> ThakurRam Campus, Birgunj, Nepal</p>
+                <p><i class="fas fa-phone"></i> +977-51-123456</p>
+                <p><i class="fas fa-envelope"></i> info@bit-thakurram.edu.np</p>
+            </div>
+        </section>
+
+
+        <!-- temporary map start -->
+        <section class="contact-map">
+            <h3>Our Location</h3>
+            
+        
+                <div class="map-container">
+                 
+                    <iframe
+                        id="campus-map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19538.413101013393!2d84.86739442243307!3d26.993985529567222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3993543cd9e9b763%3A0xf8feb90b86d40173!2sThakur%20Ram%20Multiple%20Campus!5e0!3m2!1sen!2snp!4v1722614958766!5m2!1sen!2snp"
+                        style="border:0;" 
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+   
+
+    </section>
+    <!-- <div class="calendar-container">
+        <iframe src="https://www.hamropatro.com/widgets/calender-small.php" id="hamropatro" ></iframe>
+    </div> -->
+    
+    
+
+    </main>
+
+    <%-include ('includes/footer.ejs')%>
+</body>
+</html>

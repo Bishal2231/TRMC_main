@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="stylesheet" href="/css/questionM.css">
+    <link rel="stylesheet" href="/css/navbarM.css">
+    <link rel="shortcut icon" href="/Logos/fav.png" type="image/x-icon">
+
+</head>
+<body>
+
+  <section class="header">
+    <%-include('includes/navbar.ejs')%>
+</section>
+
+
+<main>
+<section class="posts-section">
+  <% for(question of questions){%>
+      <div class="post">
+          <div class="post-header">
+           <% if(question){%>
+
+              <a href="/profile/<%=question.user._id?question.user._id:null%>"> <img src="<%=question.user.avatar%>" alt="Profile Photo" class="post-profile-photo"></a>
+
+         <%   }%>
+             
+              <div class="post-details">
+                  <h3><%= question.user.name %></h3>
+                  <p><%= new Date(question.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %> 
+                  <%= new Date(question.createdAt).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) %></p>
+              </div>
+          </div>
+          <div class="post-content">
+            <p>Name: <%= question.name %></p>
+            <p>Email: <%= question.email %></p>
+            <p>Message: <%= question.message %></p>
+          </div>
+     </div>
+  <% } %>
+</section>
+</main>
+
+</body>
+</html>

@@ -14,7 +14,7 @@ cloudinary.config({
 
 const uploadoncloudinary= async function (avatarlocal){
 try {
-  const user=req.user
+  
         if(!avatarlocal){
           const error = {
             heading: "avatar not Found",

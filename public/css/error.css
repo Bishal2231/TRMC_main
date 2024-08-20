@@ -5,6 +5,8 @@
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
     box-sizing: border-box;
+         overflow-x:hidden;
+    z-index:-1;
 }
 main{
     font-family: Arial, sans-serif;

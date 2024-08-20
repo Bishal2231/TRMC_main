@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-         overflow-x:hidden;
+         
    
 }
 
@@ -19,7 +19,7 @@ body {
 
 }
 main{
-     z-index:-1;
+
 }
 .question-maincontainer, .posts-section {
     max-width: 1200px; /* Increased max-width for larger screens */

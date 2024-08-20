@@ -3,8 +3,13 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
+    overflow-x:hidden;
   }
-  
+  main{
+
+      z-index:-1;
+  }
+
   .header {
     min-height: 10vh;
     width: 100%;

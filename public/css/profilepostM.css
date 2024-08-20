@@ -1,7 +1,8 @@
 /* General Styles */
-*{
-      overflow-x:hidden;
-}
+
+
+
+      
 .post-container {
     display: flex;
     flex-direction: row;
@@ -23,7 +24,8 @@
  
   
   }
-  main{z-index:-1;}
+ 
+
 .fb-post {
     width: 100%;
     max-width: 600px;

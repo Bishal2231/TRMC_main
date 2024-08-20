@@ -5,7 +5,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-         overflow-x:hidden;
+        
  
 }
 .header {
@@ -19,9 +19,7 @@ body {
 
   
   }
-main{
-       z-index:-1;
-}
+
 .container {
     background-color: #fff;
     border-radius: 12px;

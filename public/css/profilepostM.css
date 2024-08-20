@@ -1,13 +1,17 @@
 /* General Styles */
+*{
+      overflow-x:hidden;
+}
 .post-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px; /* Adds spacing between posts */
     justify-content: center; /* Centers posts within the container */
-         overflow-x:hidden;
-    z-index:-1;
+       
+    
 }
+
 .header {
     min-height: 10vh;
     width: 100%;
@@ -19,7 +23,7 @@
  
   
   }
-  
+  main{z-index:-1;}
 .fb-post {
     width: 100%;
     max-width: 600px;

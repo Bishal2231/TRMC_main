@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
+         overflow-x:hidden;
+    z-index:-1;
 }
 
 /* Header Styling */
@@ -15,8 +17,7 @@
   background-position: center;
   background-size: cover;
     position: relative;
-       overflow-x:hidden;
-    z-index:10000;
+  
     
   }
 

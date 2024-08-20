@@ -5,6 +5,8 @@
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
     box-sizing: border-box;
+         overflow-x:hidden;
+    z-index:-1;
 }
 
 body {
@@ -18,8 +20,7 @@ body {
     background-position: center;
     background-size: cover;
     position: relative;
-       overflow-x:hidden;
-    z-index:10000;
+
 }
 
 main { 

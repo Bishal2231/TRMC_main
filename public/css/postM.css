@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
          overflow-x:hidden;
-    z-index:-1;
+ 
 }
 .header {
     min-height: 10vh;
@@ -19,6 +19,9 @@ body {
 
   
   }
+main{
+       z-index:-1;
+}
 .container {
     background-color: #fff;
     border-radius: 12px;

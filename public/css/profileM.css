@@ -3,7 +3,8 @@ body {
     background-color: #f0f2f5;
     margin: 0;
     padding: 0;
-         overflow-x:hidden;
+
+    
 
 }
 .space{
@@ -20,9 +21,7 @@ body {
 
   
   }
-main{
-        z-index:-1;
-}
+
   
 .profile-container {
     width: 100%;

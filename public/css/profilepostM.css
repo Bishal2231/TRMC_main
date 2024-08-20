@@ -5,6 +5,8 @@
     flex-wrap: wrap;
     gap: 20px; /* Adds spacing between posts */
     justify-content: center; /* Centers posts within the container */
+         overflow-x:hidden;
+    z-index:-1;
 }
 .header {
     min-height: 10vh;
@@ -14,8 +16,7 @@
   background-position: center;
   background-size: cover;
     position: relative;
-       overflow-x:hidden;
-    z-index:10000;
+ 
   
   }
   

@@ -5,7 +5,7 @@
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
     box-sizing: border-box;
-         overflow-x:hidden;
+         
     
 }
 main{
@@ -16,7 +16,7 @@ main{
     height: 100vh;
     margin: 0;
     background-color: #f4f4f4;
-    z-index:-1;
+    
 }
 .header {
     min-height: 10vh;

@@ -5,6 +5,8 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+         overflow-x:hidden;
+    z-index:-1;
 }
 .header {
     min-height: 10vh;
@@ -14,8 +16,7 @@ body {
   background-position: center;
   background-size: cover;
     position: relative;
-       overflow-x:hidden;
-    z-index:10000;
+
   
   }
 .container {

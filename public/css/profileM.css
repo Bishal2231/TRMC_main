@@ -3,6 +3,8 @@ body {
     background-color: #f0f2f5;
     margin: 0;
     padding: 0;
+         overflow-x:hidden;
+    z-index:-1;
 }
 .space{
     margin-top:30px;
@@ -15,8 +17,7 @@ body {
   background-position: center;
   background-size: cover;
     position: relative;
-       overflow-x:hidden;
-    z-index:10000;
+
   
   }
   

@@ -4,6 +4,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+         overflow-x:hidden;
+    z-index:-1;
 }
 
 .header {
@@ -14,8 +16,7 @@ body {
     background-position: center;
     background-size: cover;
     position: relative;
-       overflow-x:hidden;
-    z-index:10000;
+
 }
 
 .question-maincontainer, .posts-section {

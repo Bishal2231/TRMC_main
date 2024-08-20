@@ -12,6 +12,8 @@ body {
   background-position: center;
   background-size: cover;
     position: relative;
+       overflow-x:hidden;
+    z-index:10000;
   
   }
   

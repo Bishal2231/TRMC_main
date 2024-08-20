@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
          overflow-x:hidden;
-    z-index:-1;
+
 }
 .space{
     margin-top:30px;
@@ -20,6 +20,9 @@ body {
 
   
   }
+main{
+        z-index:-1;
+}
   
 .profile-container {
     width: 100%;

@@ -5,7 +5,7 @@
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
     box-sizing: border-box;
-         overflow-x:hidden;
+       
   
 }
 
@@ -30,7 +30,7 @@ main {
     align-items: center;
     background-color: #f0f2f5;
     padding: 20px;
-      z-index:-1;
+
 }
 
 .posts-section {

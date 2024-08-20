@@ -5,9 +5,11 @@
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
          overflow-x:hidden;
-    z-index:-1;
-}
 
+}
+main{
+        z-index:-1;
+}
 /* Header Styling */
 .header {
     min-height: 10vh;

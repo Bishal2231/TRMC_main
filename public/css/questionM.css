@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #f4f4f4;
          overflow-x:hidden;
-    z-index:-1;
+   
 }
 
 .header {
@@ -18,7 +18,9 @@ body {
     position: relative;
 
 }
-
+main{
+     z-index:-1;
+}
 .question-maincontainer, .posts-section {
     max-width: 1200px; /* Increased max-width for larger screens */
     margin: 20px auto;

@@ -5,6 +5,7 @@
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    overflow-x: hidden;
          
     
 }
@@ -27,7 +28,7 @@ main{
   background-size: cover;
     position: relative;
        overflow-x:hidden;
-    z-index:10000;
+    z-index:3000;
   
   }
   

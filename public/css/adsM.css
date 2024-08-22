@@ -3,7 +3,7 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
-    
+    overflow-x: hidden;
   }
 
 
@@ -15,6 +15,7 @@
   background-position: center;
   background-size: cover;
     position: relative;
+    z-index: 3000;
   
   }
   

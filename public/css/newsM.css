@@ -4,6 +4,7 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  overflow-x: hidden;
    
  
 }
@@ -16,6 +17,7 @@
   background-position: center;
   background-size: cover;
   position: relative;
+  z-index:4000;
 
 }
 

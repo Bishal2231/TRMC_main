@@ -96,24 +96,26 @@
     </nav>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-  const userpp = document.querySelector(".profile-user");
-  const useropt = document.querySelector(".dropdown-content");
-  
-useropt.style.display="none";
+  document.addEventListener("DOMContentLoaded", () => {
+    const userpp = document.querySelector(".profile-user");
+    const useropt = document.querySelector(".dropdown-content");
+    
+    // Check if both elements exist
+    if (userpp && useropt) {
+        useropt.style.display = "none";  // Hide dropdown initially
 
-  userpp.addEventListener("click", () => {
-
-   if(useropt.style.display==="block") {
-    useropt.style.display="none"
+        userpp.addEventListener("click", () => {
+            // Toggle dropdown visibility
+            if (useropt.style.display === "block") {
+                useropt.style.display = "none";
+            } else {
+                useropt.style.display = "block";
+            }
+        });
+    } else {
+        console.error("Element not found: profile-user or dropdown-content");
     }
-else{
-
-    useropt.style.display="block";
-}
-   
-
-  });
 });
+
 </script>
  

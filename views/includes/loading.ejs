@@ -1,0 +1,23 @@
+
+<div id="loading">
+    <h2>Signup</h2>
+    <button id="signupButton">Sign up</button>
+    <div id="spinner" class="spinner"></div> <!-- Loading sign -->
+    <div id="message">Stay tuned</div> 
+</div>
+
+<script >
+ document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('signupButton');
+        const load=document.getElementById('loading')
+
+         
+        if (btn) {
+            btn.addEventListener("click", () => {
+                console.log("clicked");
+            });
+        } else {
+            console.error("Signup button not found in the DOM.");
+        }
+    });
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry</title>
+    <link rel="shortcut icon" href="Logos/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/navbarM.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    
+<link rel="stylesheet" href="/css/error.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="/js/scriptM.js" defer></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Material Icons Link -->
+
+</head>
+<body>
+    <section class="header">
+        <%-include('includes/navbar.ejs')%>
+    </section> 
+    <main>
+    <div class="message-container">
+        <h1><%=error.heading%></h1>
+        <p><%=error.paragraph%></p>
+        
+        <a href="<%=error.link?error.link:null%>">  <%=error.name?error.name:null%> </a>
+    </div>
+</main>
+<%-include ('includes/footer.ejs')%>
+</body>
+</html>
+    
